@@ -54,7 +54,6 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceView
         return deviceList.size();
     }
 
-    // Custom method to update the list and notify changes
     public void updateDeviceList(List<Device> newList) {
         deviceList.clear();
         deviceList.addAll(newList);

@@ -51,10 +51,8 @@ public class DeviceDbHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_IP, device.getIpAddress());
         cv.put(COLUMN_TYPE, device.getServiceType());
 
-        // Try to insert; if name already exists (UNIQUE constraint), update
         long result = db.insertWithOnConflict(TABLE_DEVICES, null, cv, SQLiteDatabase.CONFLICT_REPLACE);
-        // The result returns the row ID of the inserted row, or -1 if an error occurred.
-        // For CONFLICT_REPLACE, it is the ID of the new row.
+
         return result;
     }
 
@@ -79,7 +77,6 @@ public class DeviceDbHelper extends SQLiteOpenHelper {
                 String ip = cursor.getString(ipIndex);
                 String type = cursor.getString(typeIndex);
 
-                // When loading, assume offline until mDNS confirms status
                 deviceList.add(new Device(id, name, ip, type, false));
             } while (cursor.moveToNext());
         }
