@@ -11,8 +11,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class NsdManagerHelper {
     private static final String TAG = "NsdManagerHelper";
-//    public static final String SERVICE_TYPE = "_http._tcp."; // Common mDNS service type
-    public static final String SERVICE_TYPE = "_airplay._tcp."; // For testing ApowerMirror
+    public static final String SERVICE_TYPE = "_http._tcp."; // Common mDNS service type
+//    public static final String SERVICE_TYPE = "_airplay._tcp."; // For testing ApowerMirror
 
     private final NsdManager nsdManager;
     private final DiscoveryListener discoveryListener;
