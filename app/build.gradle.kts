@@ -42,21 +42,17 @@ dependencies {
     implementation(libs.constraintlayout)
 
 
-    // --- MVVM: ViewModel and LiveData (Java compatible) ---
     val lifecycleVersion = "2.8.7"
     implementation("androidx.lifecycle:lifecycle-viewmodel:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-livedata:$lifecycleVersion")
-    // This allows you to use ViewModelProvider in Java
     implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion")
 
-    // --- Google Sign-In SDK ---
-    // This is the core library for "Login with Google"
+
     implementation("com.google.android.gms:play-services-auth:20.7.0")
     implementation ("com.google.android.gms:play-services-auth")
 
     implementation("androidx.security:security-crypto:1.1.0-alpha06")
 
-    // --- Unit Testing ---
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

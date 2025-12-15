@@ -13,7 +13,6 @@ public class DeviceDbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "device_dock.db";
     private static final int DATABASE_VERSION = 1;
 
-    // Table and Columns
     private static final String TABLE_DEVICES = "devices";
     private static final String COLUMN_ID = "_id";
     private static final String COLUMN_NAME = "name";
@@ -42,7 +41,6 @@ public class DeviceDbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    // --- CRUD Operations ---
 
     public long saveDevice(Device device) {
         SQLiteDatabase db = this.getWritableDatabase();

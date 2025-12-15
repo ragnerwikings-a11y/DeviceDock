@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toStartOf="@+id/text_status"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="My Home Server" />
+        tools:text="My device" />
 
     <TextView
         android:id="@+id/text_device_ip"

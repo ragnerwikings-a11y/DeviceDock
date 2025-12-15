@@ -19,11 +19,16 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceView
     private final List<Device> deviceList;
     private final int onlineColor;
     private final int offlineColor;
+    private final OnDeviceClickListener clickListener;
 
-    public DeviceAdapter(Context context, List<Device> deviceList) {
+    public DeviceAdapter(Context context, List<Device> deviceList,OnDeviceClickListener clickListener) {
         this.deviceList = deviceList;
         this.onlineColor = ContextCompat.getColor(context, android.R.color.holo_green_dark);
         this.offlineColor = ContextCompat.getColor(context, android.R.color.darker_gray);
+        this.clickListener = clickListener;
+    }
+    public interface OnDeviceClickListener {
+        void onDeviceClick(Device device);
     }
 
     @NonNull
@@ -47,6 +52,11 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceView
             holder.statusTextView.setText("Offline");
             holder.statusTextView.setTextColor(offlineColor);
         }
+        holder.itemView.setOnClickListener(v -> {
+            if (clickListener != null) {
+                clickListener.onDeviceClick(device);
+            }
+        });
     }
 
     @Override

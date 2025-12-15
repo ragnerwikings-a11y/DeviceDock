@@ -17,10 +17,8 @@ public class TokenHandler {
 
     public TokenHandler(Context context) {
         try {
-            // 1. Create or retrieve the Master Key from the Android Keystore
             String masterKeyAlias = MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC);
 
-            // 2. Initialize EncryptedSharedPreferences
             this.prefs = EncryptedSharedPreferences.create(
                     PREF_FILE_NAME,
                     masterKeyAlias,
@@ -30,8 +28,7 @@ public class TokenHandler {
             );
 
         } catch (GeneralSecurityException | IOException e) {
-            // Log the error and handle it gracefully (e.g., by falling back to
-            // a less secure storage or forcing re-login)
+
             e.printStackTrace();
             throw new RuntimeException("Failed to initialize SecureTokenManager", e);
         }
@@ -42,7 +39,6 @@ public class TokenHandler {
     }
 
     public String getAuthToken() {
-        // Default value is null if not found
         return prefs.getString(KEY_ACCESS_TOKEN, null);
     }
 
@@ -51,7 +47,6 @@ public class TokenHandler {
     }
 
     public boolean hasValidToken() {
-        // Checks if a token is present
         return getAuthToken() != null;
     }
 }

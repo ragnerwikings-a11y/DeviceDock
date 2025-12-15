@@ -21,7 +21,7 @@
         android:id="@+id/text_empty_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No devices found. Ensure services are running on the network."
+        android:text="@string/no_device_found"
         android:visibility="gone"
         android:padding="32dp"
         android:textAlignment="center"

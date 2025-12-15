@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">DeviceDock</string>
     <string name="default_web_client_id">813357013620-er411me60e2f08m9l8oqh2gl24faq215.apps.googleusercontent.com</string>
+    <string name="label_public_ip">Public IP: </string>
+    <string name="label_city">City: </string>
+    <string name="label_region">Region: </string>
+    <string name="label_country">Country: </string>
+    <string name="label_organization">Organization: </string>
+    <string name="label_carrier">Carrier: </string>
+    <string name="login">Login </string>
+    <string name="enter_email">Enter email </string>
+    <string name="no_device_found">No devices found. Ensure services are running on the network. </string>
 </resources>
